@@ -1,0 +1,155 @@
+html {
+  box-sizing: border-box;
+  color: #0eb3e0;
+  background-color: #131313;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+h1,
+form {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.gallery {
+  padding: 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.gallery-item {
+  flex: 1 1 calc((100% / 3) - 2rem);
+  position: relative;
+  padding: 2px 2px;
+  border-radius: 5px;
+  background-color: inherit;
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -0.125em;
+  left: -0.125em;
+  width: calc(100% + 0.25em);
+  height: calc(100% + 0.25em);
+  border-radius: 0.25em;
+  background-image: linear-gradient(
+    45deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  background-size: 200%;
+  animation: animateborder 3s ease infinite paused;
+}
+
+.gallery-item:hover::after {
+  animation-play-state: running;
+}
+
+@keyframes animateborder {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+.photo-card {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.stats {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.material-icons {
+  margin-right: 5px;
+}
+
+input::placeholder {
+  color: rgb(82, 79, 79);
+}
+
+input {
+  padding-left: 10px;
+  color: rgb(255, 255, 255);
+  background-color: #131313;
+  border: 2px solid #0eb3e0;
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: transparent;
+  border-color: #43d4fc;
+}
+
+.btn {
+  width: 100px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #0eb3e0;
+  color: blanchedalmond;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #131313;
+  background-color: #43d4fc;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+}
